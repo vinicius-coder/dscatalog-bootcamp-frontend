@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './styles.scss';
 
-
 const Navibar = () => (
     <nav className="row bg-primary main-nav">
         <div className="col-2">
@@ -13,7 +12,7 @@ const Navibar = () => (
         <div className="col-6 offset-2">
             <ul className="main-menu">
                 <li>
-                    <NavLink to="/" activeClassName="active">
+                    <NavLink to="/" activeClassName="active" exact>
                         HOME
                     </NavLink>
                 </li>

@@ -1,6 +1,6 @@
 import React from 'react';
-import { ReactComponent as MainImage } from '../../core/assets/images/main-image.svg';
-import ButtomIcom from '../../core/components/ButtomIcon';
+import { ReactComponent as MainImage } from 'core/assets/images/main-image.svg';
+import ButtomIcom from 'core/components/ButtomIcon';
 import { Link } from 'react-router-dom'
 import './styles.scss';
 

@@ -1,4 +1,4 @@
-import { makeRequest } from 'core/utils/request';
+import { makePrivateRequest } from 'core/utils/request';
 import React, { useState } from 'react';
 import BaseForm from '../../BaseForm';
 import './styles.scss';
@@ -39,7 +39,7 @@ const Form = () => {
             categories: [{id: formData.category}]
         }
 
-        makeRequest({url: '/products', method: 'POST', data: payload})
+        makePrivateRequest({url: '/products', method: 'POST', data: payload})
             .then(()=>{
                 setFormData({ name: '', category: '', price: '', description: ''});
             })
@@ -60,6 +60,18 @@ const Form = () => {
                             placeholder="Nome do produto"
                         />
 
+                        <select
+                            value={formData.category}
+                            name="category"
+                            className="form-control mb-5"
+                            onChange={handleOnChange}
+                        >
+                            <option value="0">Categoria...</option>
+                            <option value="1">Livros</option>
+                            <option value="2">Computadores</option>
+                            <option value="3">Eletrônicos</option>
+                        </select>
+
                         <input
                             value={formData.price}
                             name="price"
@@ -68,18 +80,6 @@ const Form = () => {
                             onChange={handleOnChange}
                             placeholder="Preço"
                         />
-
-                        <select
-                            value={formData.category}
-                            name="category"
-                            className="form-control mb-5"
-                            onChange={handleOnChange}
-                        >
-                            <option value="0">Choose...</option>
-                            <option value="1">Livros</option>
-                            <option value="2">Computadores</option>
-                            <option value="3">Eletrônicos</option>
-                        </select>
 
                     </div>
                     <div className="col-6">

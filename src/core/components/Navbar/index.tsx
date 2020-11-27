@@ -11,11 +11,7 @@ const Navibar = () => {
 
     useEffect(() => {
         const {user_name} = getAcessTokenDecoded();
-
-        if(user_name){
-            setCurrentUser(user_name);
-        }
-
+        setCurrentUser(user_name);
     }, [location]);
 
     const handleLogout = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {

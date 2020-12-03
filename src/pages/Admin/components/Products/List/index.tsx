@@ -5,6 +5,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Card from '../Card';
+import CardLoader from '../Loaders/ProductCardLoader';
 
 const List = () => {
 
@@ -54,7 +55,7 @@ const List = () => {
                 toast.error('Erro ao remover produto!');
             })
         }
-        
+
     }
 
     return (
@@ -64,9 +65,12 @@ const List = () => {
             </button>
 
             <div className="admin-list-container">
-                {productsResponse?.content.map(product => (
-                    <Card product={product} key={product.id} onRemove={onRemove} />
-                ))}
+                
+                {isLoading ? <CardLoader /> : (
+                    productsResponse?.content.map(product => (
+                        <Card product={product} key={product.id} onRemove={onRemove} />
+                    ))
+                )}
 
                 {productsResponse && (
                     <Pagination
@@ -75,6 +79,7 @@ const List = () => {
                         onChange={page => setActivePage(page)}
                     />
                 )}
+                
             </div>
         </div>
     )

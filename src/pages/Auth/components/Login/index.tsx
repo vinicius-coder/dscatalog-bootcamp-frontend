@@ -1,4 +1,4 @@
-import ButtomIcom from 'core/components/ButtomIcon';
+import ButtomIcon from 'core/components/ButtomIcon';
 import React, { useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -87,7 +87,7 @@ const Login = () => {
                 </Link>
 
                 <div className="login-submit">
-                    <ButtomIcom text="Logar" />
+                    <ButtomIcon text="Logar" />
                 </div>
 
                 <div className="text-center">

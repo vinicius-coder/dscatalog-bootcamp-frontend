@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactComponent as MainImage } from 'core/assets/images/main-image.svg';
-import ButtomIcom from 'core/components/ButtomIcon';
+import ButtomIcon from 'core/components/ButtomIcon';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
@@ -13,7 +13,7 @@ const Home = () => (
                     Ajudaremos você a encontrar os melhores <br />produtos disponíveis no mercado.
                 </p>
                 <Link to="/products">
-                    <ButtomIcom text="inicie agora a sua busca"/>
+                    <ButtomIcon text="inicie agora a sua busca"/>
                 </Link>
             </div>
             <div className="col-6">

@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import ProductCard from '../ProductCard';
 import { Product } from 'core/types/Product';
 
-test.only('Shound render ProductCard', () => {
+test('Shound render ProductCard', () => {
 
     const product = {
         name: 'computador',
